@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../Firebase/Firebase.init";
 import { ToastContainer } from "react-toastify";
@@ -11,6 +11,10 @@ const AuthProvider = ({children}) => {
 
     const [user, setUser] = useState(null);
 console.log(user) 
+
+
+const googleProvider = new GoogleAuthProvider()
+const githubProvider = new GithubAuthProvider()
 // create user  
 const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password)
@@ -19,6 +23,14 @@ const createUser = (email, password) => {
 const login = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password)
 } 
+
+const loginGoogle = () => {
+ return signInWithPopup(auth, googleProvider)
+}
+
+const loginGithub = () => { 
+ return signInWithPopup(auth, githubProvider)
+}
 
 const logout = () => {
     setUser(null)
@@ -40,7 +52,9 @@ useEffect( () => {
         setUser, 
         createUser,
         login, 
-        logout 
+        logout, 
+        loginGoogle,
+        loginGithub
     }
 
     return (

@@ -34,13 +34,13 @@ const Nav = () => {
 
       {
       user ? 
-      <div> <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+      <div className="flex items-center gap-2"> <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
       <div className="w-10 rounded-full">
         <img alt="Tailwind CSS Navbar component" src={`${user? user.photoURL : userDefaultPic}`} />
       </div>
     </div> 
-    <button onClick={logout} className="btn ">Logout</button>  </div> :  <Link to="/login">
-   <button className="btn ">Login</button>
+    <button onClick={logout} className="btn ">Sign Out</button>  </div> :  <Link to="/login">
+   <button className="btn ">Sign In</button>
    </Link> } 
   
   </div>

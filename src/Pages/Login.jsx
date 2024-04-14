@@ -9,7 +9,7 @@ import googleIcon from "../assets/Logo-google-icon-PNG.png"
 import githubIcon from "../assets/github-logo.png"
 const Login = () => {
 
-const { login } = useContext(AuthContext) 
+const { login, loginGoogle, setUser, loginGithub } = useContext(AuthContext) 
 const [passwordError, setPasswordError] = useState("")
 
 const [showPassword, setShowPassword] = useState(false) 
@@ -49,6 +49,22 @@ const [showPassword, setShowPassword] = useState(false)
         alert("Succesfully registered!")
       }
 
+      const handlesignInGoogle = () => {
+loginGoogle()
+.then(result => {
+    setUser(result.user)
+} )
+.catch(error => alert(error.message))
+      }
+
+
+      const handlesignInGit = () => {
+loginGithub()
+.then(result => {
+    setUser(result.user)
+} )
+.catch(error => alert(error.message))
+      }
 
 
     return (
@@ -90,10 +106,10 @@ const [showPassword, setShowPassword] = useState(false)
 
 
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <button className="btn btn-primary">Sign In</button>
               </div>
 
-<div>
+<div className="space-y-4">
 
 <div className="flex justify-center items-center gap-2 mt-4">
 
@@ -103,11 +119,20 @@ const [showPassword, setShowPassword] = useState(false)
 
 </div>
 
+<div onClick={handlesignInGoogle} className="flex items-center gap-3 btn btn-outline btn-primary w-full ">
+    <img className="w-5" src={googleIcon} alt="" />
+    <p>Sign In with Google</p>
+</div>
+
+<div onClick={handlesignInGit} className="flex  items-center gap-3 btn btn-outline btn-primary w-full ">
+    <img className="w-5" src={githubIcon} alt="" />
+    <p>Sign In with Github</p> 
+</div>
 
 </div>
 
             </form>
-            <p className="mt-4">Don't have an account?<Link to="/register" className="text-blue-500 font-bold ml-2">Register</Link></p>
+            <p className="mt-4">Don't have an account?<Link to="/register" className="text-blue-500 font-bold ml-2">Sign Up</Link></p>
           </div>
         </div>
       </div>
