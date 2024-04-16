@@ -1,8 +1,10 @@
+import SwipperBanner from "../Components/SwipperBanner";
 
 const Home = () => {
     return (
-        <div>
-            This is home page
+        <div className="mt-5">
+           
+           <SwipperBanner></SwipperBanner>
         </div>
     );
 };

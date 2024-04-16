@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../Provider/AuthProvider";
 import { IoEyeOff } from "react-icons/io5";
 import { FaEye } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import googleIcon from "../assets/Logo-google-icon-PNG.png"
 import githubIcon from "../assets/github-logo.png"
 const Login = () => {
@@ -13,6 +13,9 @@ const { login, loginGoogle, setUser, loginGithub } = useContext(AuthContext)
 const [passwordError, setPasswordError] = useState("")
 
 const [showPassword, setShowPassword] = useState(false) 
+const navigate = useNavigate(); 
+
+
     const {
         register,
         handleSubmit,
@@ -43,6 +46,8 @@ const [showPassword, setShowPassword] = useState(false)
         login(email, password)
         .then(result => {
             console.log(result.user);
+            data.reset() 
+            navigate("/")
         })
         .catch(error => console.log(error))
         setPasswordError("")
@@ -53,6 +58,7 @@ const [showPassword, setShowPassword] = useState(false)
 loginGoogle()
 .then(result => {
     setUser(result.user)
+    navigate("/")
 } )
 .catch(error => alert(error.message))
       }
@@ -62,6 +68,7 @@ loginGoogle()
 loginGithub()
 .then(result => {
     setUser(result.user)
+    navigate("/")
 } )
 .catch(error => alert(error.message))
       }
@@ -70,10 +77,7 @@ loginGithub()
     return (
         <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Login now!</h1>
-            <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-          </div>
+          
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-5">
 
             <form onSubmit={handleSubmit(onSubmit)} className="">

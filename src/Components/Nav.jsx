@@ -5,11 +5,15 @@ import { AuthContext } from "../Provider/AuthProvider";
 const Nav = () => {
 
     const {user, logout} = useContext(AuthContext)
-
+    
 
     const NavLinks = <>
     <li><NavLink to="/">Home</NavLink></li>
-       <li><NavLink to="/update">Update Profile</NavLink></li>
+       {user && <li><NavLink to="/order">Orders</NavLink></li>}
+       {user && <li><NavLink to="/update">Update Profile</NavLink></li>}
+       {user && <li><NavLink to="/service">Services</NavLink></li>} 
+       <li><NavLink to="/about">About</NavLink></li>
+       <li><NavLink to="/contact">Contact Us</NavLink></li>
    </>
     return (
         <div className="navbar bg-base-100">
@@ -25,7 +29,7 @@ const Nav = () => {
     <a className="btn btn-ghost text-xl">Havenly Habitat</a>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
+    <ul className="menu menu-horizontal px-1 gap-1">
     {NavLinks}
     </ul>
   </div>
@@ -35,8 +39,8 @@ const Nav = () => {
       {
       user ? 
       <div className="flex items-center gap-2"> <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-      <div className="w-10 rounded-full">
-        <img alt="Tailwind CSS Navbar component" src={`${user? user.photoURL : userDefaultPic}`} />
+      <div title={user.displayName}  className="w-10 rounded-full">
+        < img alt="Tailwind CSS Navbar component" src={`${user? user.photoURL : userDefaultPic}`} />
       </div>
     </div> 
     <button onClick={logout} className="btn ">Sign Out</button>  </div> :  <Link to="/login">

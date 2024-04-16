@@ -1,0 +1,84 @@
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
+import userDefaultPic from "../assets/user.png" 
+const UpdateProfile = () => {
+
+const {user, createUpdate, setUser} = useContext(AuthContext) 
+
+
+const handleUpdateForm = (e) => {
+    e.preventDefault()
+    const form = new FormData(e.currentTarget);
+    const fullName = form.get("fullName"); 
+    const email = form.get("email");
+    const photoURL = form.get("photoURL");
+    console.log(fullName, email, photoURL) 
+
+    if(fullName && email && photoURL) {
+        createUpdate(fullName, email, photoURL)
+        .then(result => {
+            console.log(result)
+            setUser((prevUser) => {
+                return {...prevUser, displayName: fullName, email: email, photoURL: photoURL}
+            })
+          
+        })
+    } 
+} 
+
+    return (
+        <div className="container lg:w-2/5 mx-auto px-4 py-8">
+      <div className="card bg-base-100 shadow-md rounded-lg">
+        <div className="flex flex-col items-center gap-5">
+            <img className="w-24 h-24 rounded-full text-center border-2 hover:border-red-500" src={user.photoURL || userDefaultPic }alt="" />
+            <h2 className="font-bold">{user.displayName}</h2>
+        </div>
+        <div className="card-body">
+          <form onSubmit={handleUpdateForm} className="space-y-4">
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text text-sm font-medium">
+                  Full Name:
+                </span>
+              </label>
+              <input
+                type="text"
+                name="fullName"
+                className="input input-bordered w-full"
+              value={user.displayName}
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text text-sm font-medium">Email:</span>
+              </label>
+              <input
+                type="email"
+                name="email"
+                className="input input-bordered w-full"
+              />
+            </div>
+            <div className="form-control">
+              <label  className="label">
+                <span className="label-text text-sm font-medium">
+                  Photo URL:
+                </span>
+              </label>
+              <input
+                type="url"
+                name="photoURL"
+                className="input input-bordered w-full"
+              />
+            </div>
+            <button type="submit" className="btn btn-primary hover:bg-primary-focus">
+              Update
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    );
+};
+
+export default UpdateProfile;

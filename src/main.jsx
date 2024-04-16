@@ -8,6 +8,8 @@ import Home from './Pages/Home.jsx'
 import Login from './Pages/Login.jsx'
 import Register from './Pages/Register.jsx'
 import Error from './Pages/Error.jsx'
+import PrivateUpdate from './Provider/PrivateUpdateProvider/PrivateUpdate.jsx'
+import UpdateProfile from './Pages/UpdateProfile.jsx'
 
 const router = createBrowserRouter([
   {
@@ -26,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>
+      },
+      {
+        path: "/update",
+        element: <PrivateUpdate><UpdateProfile></UpdateProfile></PrivateUpdate>
       }
     ]
   }

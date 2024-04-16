@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const Register = () => {
 
-const { createUser, setUser } = useContext(AuthContext) 
+const { createUser, setUser, updateUserProfile } = useContext(AuthContext) 
 const [passwordError, setPasswordError] = useState("")
 
 const [showPassword, setShowPassword] = useState(false) 
@@ -39,7 +39,13 @@ const [showPassword, setShowPassword] = useState(false)
 
 
         createUser(email, password)
-        .then(result => setUser(result.user) )
+        .then(result => {
+          updateUserProfile(fullName, photoURL)
+          .then(() => {
+            setUser(result.user) 
+          })
+          
+        })
         .catch(error => console.log(error)) 
         setPasswordError("")
         alert("Succesfully registered!")
