@@ -1,0 +1,110 @@
+[
+    {
+      "image": "https://i.ibb.co/HrT8SC4/family-Retreat.jpg",
+      "estate_title": "Family Retreat",
+      "id": 1,
+      "segment_name": "Residential",
+      "description": "Spacious single-family home with a large backyard, perfect for family gatherings.",
+      "price": "$450,000",
+      "status": "sale",
+      "area": "3,000 sq ft",
+      "location": "Suburban neighborhood",
+      "facilities": ["4 bedrooms", "3 bathrooms", "backyard", "garage"]
+    },
+    {
+      "image": "https://i.ibb.co/4M4DdyZ/urban-Loft.jpg",
+      "estate_title": "Urban Loft",
+      "id": 2,
+      "segment_name": "Residential",
+      "description": "Chic loft-style apartment in the heart of the city, boasting modern amenities and city views.",
+      "price": "$3,500/month",
+      "status": "rent",
+      "area": "1,200 sq ft",
+      "location": "Downtown",
+      "facilities": ["Open floor plan", "High ceilings", "City views", "Fitness center"]
+    },
+    {
+      "image": "https://i.ibb.co/xDLmkMG/student-Haven.jpg",
+      "estate_title": "Student Haven",
+      "id": 3,
+      "segment_name": "Residential",
+      "description": "Fully furnished student housing complex near campus, offering comfortable living spaces and study areas.",
+      "price": "$700/month per room",
+      "status": "rent",
+      "area": "Shared living spaces",
+      "location": "University district",
+      "facilities": ["Furnished rooms", "Study lounges", "Fitness center", "Laundry facilities"]
+    },
+    {
+      "image": "https://i.ibb.co/gDLyZhK/output.jpg",
+      "estate_title": "Retirement Oasis",
+      "id": 4,
+      "segment_name": "Residential",
+      "description": "Luxurious senior living community providing resort-style amenities and personalized care services.",
+      "price": "$5,000/month",
+      "status": "rent",
+      "area": "Varies by unit",
+      "location": "Senior-friendly community",
+      "facilities": ["Assisted living services", "Swimming pool", "Spa", "Restaurant"]
+    },
+    {
+      "image": "https://i.ibb.co/1JqMxGK/lifestyle.jpg",
+      "estate_title": "Lakefront Cottage",
+      "id": 5,
+      "segment_name": "Residential",
+      "description": "Quaint cottage nestled by the lake, offering serene views and cozy interiors.",
+      "price": "$300,000",
+      "status": "sale",
+      "area": "1,500 sq ft",
+      "location": "Lakefront",
+      "facilities": ["Scenic views", "Deck", "Boat dock"]
+    },
+    {
+      "image": "https://i.ibb.co/ZVXGXsx/subUrban.jpg",
+      "estate_title": "Suburban Townhouse",
+      "id": 6,
+      "segment_name": "Residential",
+      "description": "Modern townhouse with contemporary design and easy access to local amenities.",
+      "price": "$250,000",
+      "status": "sale",
+      "area": "1,800 sq ft",
+      "location": "Suburban neighborhood",
+      "facilities": ["2 bedrooms", "2.5 bathrooms", "Patio", "Community pool"]
+    },
+    {
+      "image": "https://i.ibb.co/cwY6zqs/hawaiianrealestate.jpg",
+      "estate_title": "Vacation Villa",
+      "id": 7,
+      "segment_name": "Residential",
+      "description": "Luxury villa in a tropical paradise, offering a private pool and breathtaking ocean views.",
+      "price": "$800/night",
+      "status": "rent",
+      "area": "3,500 sq ft",
+      "location": "Beachfront",
+      "facilities": ["Private pool", "Ocean views", "Outdoor dining area", "Garden"]
+    },
+    {
+      "image": "https://i.ibb.co/kqJhDTz/164567864.jpg",
+      "estate_title": "Cosy Apartment",
+      "id": 8,
+      "segment_name": "Residential",
+      "description": "Compact yet comfortable apartment in a vibrant neighborhood, ideal for urban living.",
+      "price": "$1,200/month",
+      "status": "rent",
+      "area": "800 sq ft",
+      "location": "City center",
+      "facilities": ["1 bedroom", "1 bathroom", "Balcony", "Fitness center"]
+    },
+    {
+      "image": "https://i.ibb.co/5BhhJ0G/7866-lee-hwy-rural-retreat-va-24368-001.jpg",
+      "estate_title": "Rural Retreat",
+      "id": 9,
+      "segment_name": "Residential",
+      "description": "Tranquil retreat nestled in the countryside, offering peace and privacy away from the hustle and bustle.",
+      "price": "$400,000",
+      "status": "sale",
+      "area": "2 acres",
+      "location": "Rural area",
+      "facilities": ["Spacious garden", "Outdoor living space", "Trails"]
+    }
+  ]
