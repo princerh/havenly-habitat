@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "service_title": "Property Management",
+        "description": "Professional property management services to handle rental properties efficiently, including tenant screening, rent collection, maintenance, and more.",
+        "price_range": "$100 - $500/month",
+        "location": "Available for properties within city limits",
+        "facilities": ["Tenant screening", "Rent collection", "Maintenance", "Emergency response"],
+        "image": "https://i.ibb.co/XJ79y9N/property-management-stock-ezgif-com-webp-to-jpg-converter.jpg"
+    },
+    {
+        "id": 2,
+        "service_title": "Home Staging",
+        "description": "Expert home staging services to enhance the appeal of residential properties for sale, attracting more potential buyers and maximizing sale value.",
+        "price_range": "$500 - $2000",
+        "location": "Available for properties within 50-mile radius",
+        "facilities": ["Staging consultation", "Furniture rental", "Decor accessories", "Staging setup"],
+        "image": "https://i.ibb.co/6ZGYkD9/dsc-0360-48903770712-o.jpg"
+    },
+    {
+        "id": 3,
+        "service_title": "Property Photography",
+        "description": "Professional property photography services to capture stunning images of residential properties for effective marketing and promotion.",
+        "price_range": "$100 - $300",
+        "location": "Available for properties within city limits",
+        "facilities": ["High-resolution photos", "Virtual tours", "Image editing", "Quick turnaround"],
+        "image": "https://i.ibb.co/PZqd0qs/3-1.jpg"
+    },
+    {
+        "id": 4,
+        "service_title": "Landscaping",
+        "description": "Comprehensive landscaping services to enhance the outdoor spaces of residential properties, creating beautiful and functional landscapes.",
+        "price_range": "Varies based on project scope",
+        "location": "Available for properties within 50-mile radius",
+        "facilities": ["Lawn care", "Garden design", "Hardscaping", "Irrigation system installation"],
+        "image": "https://i.ibb.co/09g6CP5/Installing-Natural-Grass-From-Roll-1200x800.jpg"
+    }
+]
