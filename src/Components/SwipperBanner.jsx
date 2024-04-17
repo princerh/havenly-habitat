@@ -3,7 +3,10 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-
+import img1 from "/pic1.jpg"
+import img2 from "/pic2.jpg"
+import img3 from "/pic3.jpg"
+import img4 from "/pic4.jpg"
 import './Style.css'; 
 
 export default function SwipperBanner() {
@@ -23,19 +26,19 @@ export default function SwipperBanner() {
       className="mySwiper"
     >
       <SwiperSlide>
-        <img src="../../public/pic1.jpg" alt="" />
+        <img src={img1} alt="" />
         <div className="welcome-text">Book your preferred house today and secure your place in the Havenly Habitat community.</div>
       </SwiperSlide>
       <SwiperSlide>
-        <img src="../../public/pic2.jpg" alt="" />
+        <img src={img2} alt="" />
         <div className="welcome-text">Book your preferred house today and secure your place in the Havenly Habitat community.</div>
       </SwiperSlide>
       <SwiperSlide>
-        <img src="../../public/pic3.jpg" alt="" />
+        <img src={img3} alt="" />
         <div className="welcome-text">Book your preferred house today and secure your place in the Havenly Habitat community.</div>
       </SwiperSlide>
       <SwiperSlide>
-        <img src="../../public/pic4.jpg" alt="" />
+        <img src={img4} alt="" />
         <div className="welcome-text">Book your preferred house today and secure your place in the Havenly Habitat community.</div>
       </SwiperSlide>
     </Swiper>
