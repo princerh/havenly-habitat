@@ -11,6 +11,9 @@ import Error from './Pages/Error.jsx'
 import PrivateUpdate from './Provider/PrivateUpdateProvider/PrivateUpdate.jsx'
 import UpdateProfile from './Pages/UpdateProfile.jsx'
 import EstateDetails from './Pages/EstateDetails.jsx'
+import PrivateDetails from './Provider/PrivateDetailsProvider/PrivateDetails.jsx'
+import Services from './Services.jsx'
+import PrivateServices from './Provider/PrivateServicesProvider/PrivateServices.jsx'
 
 const router = createBrowserRouter([
   {
@@ -37,8 +40,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/estate/:id",
-        element: <EstateDetails></EstateDetails>,
+        element: <PrivateDetails><EstateDetails></EstateDetails></PrivateDetails>,
         loader: () => fetch("../Estates.JSON")
+      },
+      {
+        path: "/service",
+        element: <PrivateServices><Services></Services></PrivateServices>
       }
     ]
   }

@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../Provider/AuthProvider";
 import { IoEyeOff } from "react-icons/io5";
 import { FaEye } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import googleIcon from "../assets/Logo-google-icon-PNG.png"
 import githubIcon from "../assets/github-logo.png"
 const Login = () => {
@@ -14,7 +14,8 @@ const [passwordError, setPasswordError] = useState("")
 
 const [showPassword, setShowPassword] = useState(false) 
 const navigate = useNavigate(); 
-
+const location = useLocation(); 
+console.log(location) 
 
     const {
         register,
@@ -47,7 +48,7 @@ const navigate = useNavigate();
         .then(result => {
             console.log(result.user);
             data.reset() 
-            navigate("/")
+            navigate(location?.state ? location.state : "/")
         })
         .catch(error => console.log(error))
         setPasswordError("")
@@ -58,7 +59,7 @@ const navigate = useNavigate();
 loginGoogle()
 .then(result => {
     setUser(result.user)
-    navigate("/")
+    navigate(location?.state ? location.state : "/")
 } )
 .catch(error => alert(error.message))
       }
@@ -68,7 +69,7 @@ loginGoogle()
 loginGithub()
 .then(result => {
     setUser(result.user)
-    navigate("/")
+    navigate(location?.state ? location.state : "/")
 } )
 .catch(error => alert(error.message))
       }
