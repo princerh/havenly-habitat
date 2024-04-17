@@ -2,6 +2,7 @@
 import { useLoaderData } from "react-router-dom";
 import EstateCard from "../Components/EstateCard";
 import SwipperBanner from "../Components/SwipperBanner";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
 
@@ -10,7 +11,9 @@ const Home = () => {
 
     return (
         <div className="mt-5">
-           
+           <Helmet>
+           <title>Havenly | Home</title>
+           </Helmet>
            <div>
            <SwipperBanner></SwipperBanner>
            </div>

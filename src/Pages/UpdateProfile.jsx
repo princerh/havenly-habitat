@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import userDefaultPic from "../assets/user.png" 
+import { Helmet } from "react-helmet-async";
 const UpdateProfile = () => {
 
 const {user, createUpdate, setUser} = useContext(AuthContext) 
@@ -34,6 +35,9 @@ const handleUpdateForm = (e) => {
 
     return (
         <div className="container lg:w-2/5 mx-auto px-4 py-8">
+            <Helmet>
+           <title>Havenly | Update Profile</title>
+           </Helmet>
       <div className="card bg-base-100 shadow-md rounded-lg">
         <div className="flex flex-col items-center gap-5">
             <img className="w-24 h-24 rounded-full text-center border-2 hover:border-red-500" src={user.photoURL || userDefaultPic }alt="" />
