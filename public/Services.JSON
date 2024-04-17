@@ -23,7 +23,7 @@
         "description": "Professional property photography services to capture stunning images of residential properties for effective marketing and promotion.",
         "price_range": "$100 - $300",
         "location": "Available for properties within city limits",
-        "facilities": ["High-resolution photos", "Virtual tours", "Image editing", "Quick turnaround"],
+        "facilities": ["High-resolution photos", "Virtual tours", "Image editing"],
         "image": "https://i.ibb.co/PZqd0qs/3-1.jpg"
     },
     {

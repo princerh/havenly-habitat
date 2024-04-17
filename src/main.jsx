@@ -15,6 +15,7 @@ import PrivateDetails from './Provider/PrivateDetailsProvider/PrivateDetails.jsx
 import Services from './Services.jsx'
 import PrivateServices from './Provider/PrivateServicesProvider/PrivateServices.jsx'
 import { HelmetProvider } from 'react-helmet-async'
+import About from './Pages/About.jsx'
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
         path: "/service",
         element: <PrivateServices><Services></Services></PrivateServices>,
         loader: () => fetch("../Services.JSON")  
+      },
+      {
+        path: "/about",
+        element: <About></About>
       }
     ]
   }
