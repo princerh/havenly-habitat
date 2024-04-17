@@ -8,6 +8,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import googleIcon from "../assets/Logo-google-icon-PNG.png"
 import githubIcon from "../assets/github-logo.png"
 import { Helmet } from "react-helmet-async";
+import 'animate.css';
+
 const Login = () => {
 
     const { login, loginGoogle, setUser, loginGithub } = useContext(AuthContext)
@@ -77,7 +79,7 @@ const Login = () => {
 
 
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-base-200 animate_animated animate__fadeInLeftBig">
             <Helmet> 
                 <title>Havenly | Sign In</title>
             </Helmet>
