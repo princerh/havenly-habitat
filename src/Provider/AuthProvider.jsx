@@ -65,10 +65,10 @@ const logout = () => {
 
 useEffect( () => {
     onAuthStateChanged(auth, (user) => {
-        if (user) {
+        
           setUser(user)
           setLoading(false) 
-        } 
+       
       });
     
 } ,[])

@@ -8,15 +8,14 @@ import Home from './Pages/Home.jsx'
 import Login from './Pages/Login.jsx'
 import Register from './Pages/Register.jsx'
 import Error from './Pages/Error.jsx'
-import PrivateUpdate from './Provider/PrivateUpdateProvider/PrivateUpdate.jsx'
 import UpdateProfile from './Pages/UpdateProfile.jsx'
 import EstateDetails from './Pages/EstateDetails.jsx'
 import PrivateDetails from './Provider/PrivateDetailsProvider/PrivateDetails.jsx'
 import Services from './Services.jsx'
-import PrivateServices from './Provider/PrivateServicesProvider/PrivateServices.jsx'
 import { HelmetProvider } from 'react-helmet-async'
 import About from './Pages/About.jsx'
-
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/update",
-        element: <PrivateUpdate><UpdateProfile></UpdateProfile></PrivateUpdate>
+        element: <PrivateDetails><UpdateProfile></UpdateProfile></PrivateDetails>
       },
       {
         path: "/estate/:id",
@@ -47,7 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/service",
-        element: <PrivateServices><Services></Services></PrivateServices>,
+        element: <PrivateDetails><Services></Services></PrivateDetails>,
         loader: () => fetch("../Services.JSON")  
       },
       {
@@ -66,6 +65,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <HelmetProvider>
     <RouterProvider router={router}></RouterProvider>
     </HelmetProvider>
+    <ToastContainer></ToastContainer>
     </AuthProvider>
   </React.StrictMode>,
 )

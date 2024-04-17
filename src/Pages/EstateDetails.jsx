@@ -12,7 +12,7 @@ const EstateDetails = () => {
         <div className="md: max-w-2xl my-8 lg:max-w-3xl mx-auto border p-4 rounded-xl">
             <Helmet>
            <title>Havenly | Estate Details</title>
-           </Helmet>
+           </Helmet>  
             <div>
                 <img className="w-full lg:h-[70vh]" src={image} alt="" />
             </div> 

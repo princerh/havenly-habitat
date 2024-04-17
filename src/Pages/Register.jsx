@@ -5,6 +5,7 @@ import { IoEyeOff } from "react-icons/io5";
 import { FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { toast } from "react-toastify";
 
 const Register = () => {
 
@@ -43,13 +44,21 @@ const [showPassword, setShowPassword] = useState(false)
         .then(result => {
           updateUserProfile(fullName, photoURL)
           .then(() => {
-            setUser(result.user) 
+            data.reset() 
+            setUser((prevUser) => {
+              return {...prevUser, displayName: fullName,  photoURL: photoURL}
+
+            })
           })
           
+        toast.success("Account Signed Up Successfully")
         })
-        .catch(error => console.log(error)) 
+        .catch(error => {
+          toast.error("This email has already been used")
+          data.reset()
+        }) 
         setPasswordError("")
-        alert("Succesfully registered!")
+        
       }
 
 
@@ -60,10 +69,7 @@ const [showPassword, setShowPassword] = useState(false)
            <title>Havenly | Sign Up</title>
            </Helmet>
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Register now!</h1>
-            <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-          </div>
+          
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-5">
 
             <form onSubmit={handleSubmit(onSubmit)} className="">

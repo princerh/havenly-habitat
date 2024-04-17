@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import userDefaultPic from "../assets/user.png" 
 import { Helmet } from "react-helmet-async";
+import { toast } from "react-toastify";
 const UpdateProfile = () => {
 
 const {user, createUpdate, setUser} = useContext(AuthContext) 
@@ -28,7 +29,7 @@ const handleUpdateForm = (e) => {
             setUser((prevUser) => {
                 return {...prevUser, displayName: fullName, email: email, photoURL: photoURL}
             })
-          
+          toast.success("Profile Updated Successfully")
         })
     } 
 } 

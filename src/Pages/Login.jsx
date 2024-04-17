@@ -9,6 +9,7 @@ import googleIcon from "../assets/Logo-google-icon-PNG.png"
 import githubIcon from "../assets/github-logo.png"
 import { Helmet } from "react-helmet-async";
 import 'animate.css';
+import {  toast } from "react-toastify";
 
 const Login = () => {
 
@@ -51,11 +52,15 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 data.reset()
+toast.success("User Login Succesfull")
                 navigate(location?.state ? location.state : "/")
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                toast.warning("This email has not been registered yet.")
+            console.log(error.message) 
+            })
         setPasswordError("")
-        alert("Succesfully registered!")
+        
     }
 
     const handlesignInGoogle = () => {
@@ -148,6 +153,7 @@ const Login = () => {
                     <p className="mt-4">Don't have an account?<Link to="/register" className="text-blue-500 font-bold ml-2">Sign Up</Link></p>
                 </div>
             </div>
+       
         </div>
     );
 };

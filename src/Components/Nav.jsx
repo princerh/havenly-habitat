@@ -9,12 +9,10 @@ const Nav = () => {
 
     const NavLinks = <>
     <li><NavLink to="/">Home</NavLink></li>
-       {user && <li><NavLink to="/order">Orders</NavLink></li>}
        {user && <li><NavLink to="/update">Update Profile</NavLink></li>}
        <li><NavLink to="/service">Services</NavLink></li>
        <li><NavLink to="/about">About</NavLink></li>
-       <li><NavLink to="/contact">Contact Us</NavLink></li>
-   </>
+   </> 
     return (
         <div className="navbar bg-base-100">
   <div className="navbar-start">

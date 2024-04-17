@@ -31,15 +31,15 @@ export default function SwipperBanner() {
       </SwiperSlide>
       <SwiperSlide>
         <img src={img2} alt="" />
-        <div className="welcome-text">Book your preferred house today and secure your place in the Havenly Habitat community.</div>
+        <div className="welcome-text">Experience luxury living at its finest in our exclusive residential community.</div>
       </SwiperSlide>
       <SwiperSlide>
         <img src={img3} alt="" />
-        <div className="welcome-text">Book your preferred house today and secure your place in the Havenly Habitat community.</div>
+        <div className="welcome-text">Find tranquility and comfort in our beautifully designed homes surrounded by nature.</div>
       </SwiperSlide>
       <SwiperSlide>
         <img src={img4} alt="" />
-        <div className="welcome-text">Book your preferred house today and secure your place in the Havenly Habitat community.</div>
+        <div className="welcome-text">Join our vibrant community and make unforgettable memories in your new home.</div>
       </SwiperSlide>
     </Swiper>
   );

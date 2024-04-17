@@ -3,7 +3,9 @@ import SingleService from "./Components/SingleService";
 
 const Services = () => {
 
-    const services = useLoaderData(); 
+    const services = useLoaderData();
+
+     
     return (
         <div className="space-y-5 mt-4 mb-8">
             {
