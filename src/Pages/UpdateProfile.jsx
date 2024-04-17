@@ -1,17 +1,23 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import userDefaultPic from "../assets/user.png" 
 const UpdateProfile = () => {
 
 const {user, createUpdate, setUser} = useContext(AuthContext) 
+const [formdata, setFormData] = useState({})
+
+
+useEffect(() => {
+    setFormData({name: user?.displayName, photoURL: user?.photoURL})
+} , [user])
 
 
 const handleUpdateForm = (e) => {
     e.preventDefault()
     const form = new FormData(e.currentTarget);
-    const fullName = form.get("fullName"); 
+    const fullName = formdata.name  
     const email = form.get("email");
-    const photoURL = form.get("photoURL");
+    const photoURL = formdata.photoURL; 
     console.log(fullName, email, photoURL) 
 
     if(fullName && email && photoURL) {
@@ -45,8 +51,9 @@ const handleUpdateForm = (e) => {
                 type="text"
                 name="fullName"
                 className="input input-bordered w-full"
-              value={user.displayName}
-              />
+              value={formdata.name}
+              onChange={(e) => setFormData({...formdata, name: e.target.value }) }
+              /> 
             </div>
             <div className="form-control">
               <label className="label">
@@ -56,6 +63,7 @@ const handleUpdateForm = (e) => {
                 type="email"
                 name="email"
                 className="input input-bordered w-full"
+                value={user.email} 
               />
             </div>
             <div className="form-control">
@@ -68,6 +76,8 @@ const handleUpdateForm = (e) => {
                 type="url"
                 name="photoURL"
                 className="input input-bordered w-full"
+                value= {formdata.photoURL} 
+                onChange={(e) => setFormData({...formdata, photoURL: e.target.value }) }
               />
             </div>
             <button type="submit" className="btn btn-primary hover:bg-primary-focus">
