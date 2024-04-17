@@ -10,6 +10,7 @@ import Register from './Pages/Register.jsx'
 import Error from './Pages/Error.jsx'
 import PrivateUpdate from './Provider/PrivateUpdateProvider/PrivateUpdate.jsx'
 import UpdateProfile from './Pages/UpdateProfile.jsx'
+import EstateDetails from './Pages/EstateDetails.jsx'
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
       {
         path: "/update",
         element: <PrivateUpdate><UpdateProfile></UpdateProfile></PrivateUpdate>
+      },
+      {
+        path: "/estate/:id",
+        element: <EstateDetails></EstateDetails>,
+        loader: () => fetch("../Estates.JSON")
       }
     ]
   }
