@@ -2,6 +2,7 @@ import { FaSquareFacebook } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaRegCopyright } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -13,7 +14,7 @@ const Footer = () => {
             <p className="text-lg">1362/7 South Dania</p>
             <p className="text-lg">Dhaka, Bangladesh</p>
             <p className="text-lg mt-4">Visit us:</p>
-            <a href="#" className="text-lg hover:font-bold">Google Maps</a>
+            <Link to="/leaflet" className="text-lg text-red-500 hover:font-bold">Google Maps</Link>
           </div>
           <div>
             <h6 className="text-xl font-bold mb-4">Contact</h6>

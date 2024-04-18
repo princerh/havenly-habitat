@@ -16,6 +16,8 @@ import { HelmetProvider } from 'react-helmet-async'
 import About from './Pages/About.jsx'
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+
+import Leaf from './Pages/Leaf.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -52,6 +54,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About></About>
+      },
+      {
+        path: "/leaflet",
+        element: <Leaf></Leaf>
       }
     ]
   }
