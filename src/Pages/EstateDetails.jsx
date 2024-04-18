@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import {  useLoaderData, useParams } from "react-router-dom";
+import 'animate.css';
 
 const EstateDetails = () => {
     const estates = useLoaderData(); 
@@ -13,8 +14,8 @@ const EstateDetails = () => {
             <Helmet>
            <title>Havenly | Estate Details</title>
            </Helmet>  
-            <div>
-                <img className="w-full lg:h-[70vh]" src={image} alt="" />
+            <div className="animate_animated animate__backInUp">
+                <img className="w-full rounded-t-xl lg:h-[70vh] " src={image} alt="" />
             </div> 
             <div className="space-y-4">
                 <div className="flex justify-between items-center">
@@ -35,7 +36,7 @@ const EstateDetails = () => {
 
                 <div>
                     <p className="font-bold mb-5">Price: <span className="font-normal">{price}</span></p>
-                    <Link to= "/order" className="bg-[#23BE0A] cursor-pointer active:scale-90 text-white px-3 py-2 rounded-xl">Order</Link>
+                    
                 </div>
             </div>
         </div>

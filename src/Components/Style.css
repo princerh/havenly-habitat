@@ -37,3 +37,17 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   }
   
+
+  @media (max-width: 768px) {
+    .welcome-text {
+      font-size: 18px; /* Adjust font size for mobile */
+      width: 80%; /* Adjust width for mobile */
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .welcome-text {
+      font-size: 20px; /* Adjust font size for tablets */
+      width: 60%; /* Adjust width for tablets */
+    }
+  }

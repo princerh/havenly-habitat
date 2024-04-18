@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../Provider/AuthProvider";
 import { IoEyeOff } from "react-icons/io5";
 import { FaEye } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { toast } from "react-toastify";
 
@@ -11,7 +11,7 @@ const Register = () => {
 
 const { createUser, setUser, updateUserProfile } = useContext(AuthContext) 
 const [passwordError, setPasswordError] = useState("")
-
+const navigate = useNavigate()
 const [showPassword, setShowPassword] = useState(false) 
     const {
         register,
@@ -42,20 +42,21 @@ const [showPassword, setShowPassword] = useState(false)
 
         createUser(email, password)
         .then(result => {
+          setUser(result.user) 
           updateUserProfile(fullName, photoURL)
           .then(() => {
-            data.reset() 
             setUser((prevUser) => {
               return {...prevUser, displayName: fullName,  photoURL: photoURL}
 
             })
           })
           
-        toast.success("Account Signed Up Successfully")
+        toast.success("Signed Up Successfully")
+        navigate("/")
         })
         .catch(error => {
           toast.error("This email has already been used")
-          data.reset()
+          
         }) 
         setPasswordError("")
         
@@ -64,14 +65,14 @@ const [showPassword, setShowPassword] = useState(false)
 
 
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className=" bg-base-200">
           <Helmet>
            <title>Havenly | Sign Up</title>
            </Helmet>
         <div className="hero-content flex-col lg:flex-row-reverse">
           
-          <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-5">
-
+          <div className="card  w-fit lg:w-96 shadow-2xl bg-base-100 p-5">
+          <h2 className="font-bold text-2xl text-center drop-shadow-lg">Sign Up</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="">
 
 
@@ -122,7 +123,7 @@ const [showPassword, setShowPassword] = useState(false)
 
 
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Register</button>
+                <button className="btn btn-primary">Sign Up</button>
               </div>
             </form>
             <p className="mt-4">Already have an account?<Link to="/login" className="text-blue-500 font-bold ml-2">Login</Link></p>

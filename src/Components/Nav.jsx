@@ -8,13 +8,13 @@ const Nav = () => {
     
 
     const NavLinks = <>
-    <li><NavLink to="/">Home</NavLink></li>
-       {user && <li><NavLink to="/update">Update Profile</NavLink></li>}
-       <li><NavLink to="/service">Services</NavLink></li>
-       <li><NavLink to="/about">About</NavLink></li>
+    <li><NavLink className={({isActive}) => (isActive)? `${user ? "transition duration-300 font-bold text-orange-400 border-b-2 border-orange-400" : " text-lime-500 border-b-2 border-lime-500 font-bold"} to="/"}` : ``} to="/">Home</NavLink></li>
+       {user && <li><NavLink className={({isActive}) => (isActive)? `${user ? "transition duration-300 font-bold text-orange-400 border-b-2 border-orange-400" : " text-lime-500 border-b-2 border-lime-500 font-bold"} to="/"}` : ``} to="/update">Update Profile</NavLink></li>}
+       <li><NavLink className={({isActive}) => (isActive)? `${user ? "transition duration-300 font-bold text-orange-400 border-b-2 border-orange-400" : " text-lime-500 border-b-2 border-lime-500 font-bold"} to="/"}` : ``} to="/service">Services</NavLink></li>
+       <li><NavLink className={({isActive}) => (isActive)? `${user ? "transition duration-300 font-bold text-orange-400 border-b-2 border-orange-400" : " text-lime-500 border-b-2 border-lime-500 font-bold"} to="/"}` : ``} to="/about">About</NavLink></li>
    </> 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 shadow-xl sticky top-0 z-10">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -24,7 +24,7 @@ const Nav = () => {
       {NavLinks}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">Havenly Habitat</a>
+    <a className=" dancing text-xl">Havenly Habitat</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 gap-1">
@@ -37,13 +37,14 @@ const Nav = () => {
       {
       user ? 
       <div className="flex items-center gap-2"> <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-      <div title={user.displayName}  className="w-10 rounded-full">
-        < img alt="User" src={`${user? user.photoURL : userDefaultPic}`} />
+      <div title={user.displayName}  className="w-10 border rounded-full">
+        < img className="" alt="User" src={`${user? user.photoURL : userDefaultPic}`} />
       </div>
     </div> 
-    <button onClick={logout} className="btn ">Sign Out</button>  </div> :  <Link to="/login">
-   <button className="btn ">Sign In</button>
+    <button onClick={logout} className="bg-orange-300 hover:bg-orange-400 cursor-pointer active:scale-90 font-bold text-black px-3 py-2 rounded-xl">Sign Out</button>  </div> :  <Link to="/login">
+   <button className="bg-lime-400 hover:bg-lime-500 font-bold cursor-pointer active:scale-90 text-black px-3 py-2 rounded-xl">Sign In</button>
    </Link> } 
+  
   
   </div>
 </div>

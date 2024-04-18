@@ -29,9 +29,9 @@
       "id": 3,
       "segment_name": "Residential",
       "description": "Fully furnished student housing complex near campus, offering comfortable living spaces and study areas. Experience the convenience of on-campus living in this fully furnished student housing complex located in the heart of the university district. With its comfortable living spaces, modern amenities, and dedicated study areas, this student haven provides everything you need for a successful academic year. Whether you're collaborating on group projects in the study lounge, working out in the fitness center, or relaxing in your private room, this student community offers a supportive and enriching environment for college life.",
-      "price": "$700/month per room",
+      "price": "$700/month/room",
       "status": "rent",
-      "area": "Shared living spaces",
+      "area": "Shared spaces",
       "location": "University district",
       "facilities": ["Furnished rooms", "Study lounges", "Fitness center", "Laundry facilities"]
     },

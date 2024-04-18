@@ -51,7 +51,7 @@ const Login = () => {
         login(email, password)
             .then(result => {
                 console.log(result.user);
-                data.reset()
+            
 toast.success("User Login Succesfull")
                 navigate(location?.state ? location.state : "/")
             })
@@ -84,16 +84,16 @@ toast.success("User Login Succesfull")
 
 
     return (
-        <div className="hero min-h-screen bg-base-200 animate_animated animate__fadeInLeftBig">
+        <div className="hero   bg-base-200 animate_animated animate__fadeInLeftBig ">
             <Helmet> 
                 <title>Havenly | Sign In</title>
             </Helmet>
 
 
-            <div className="hero-content flex-col lg:flex-row-reverse">
+            <div className=" my-8">
 
-                <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-5">
-
+                <div className="card w-fit  lg:w-96 max-w-sm shadow-2xl bg-base-100 p-5">
+<h2 className="font-bold text-2xl text-center drop-shadow-lg">Sign In</h2>
                     <form onSubmit={handleSubmit(onSubmit)} className="">
 
 
